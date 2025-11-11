@@ -3,8 +3,6 @@
 A <b><u>F</u></b>ast e<b><u>L</u></b>ectronic <b><u>I</u></b>nternal <b><u>R</u></b>eferral <b><u>T</u></b>ool
 
 ## Rationale
---------------
-
 
 1) Frequent complaint that ortho SHOs difficult to get hold of.
 2) Collect information that eases documentation and avoids duplication.
@@ -26,7 +24,6 @@ Will generate documents that can be incorporated into the patient care record
 
 
 ## Current Workflow
--------------------
 * Why it works
 * Is there need to change
 * Where are the problems?
@@ -37,7 +34,6 @@ Will generate documents that can be incorporated into the patient care record
 	- Protocols not defined/accessed/applied
 
 ## Other such tools
----------------------
    Do these tools exist?
    Do these tools save time?
    Do they feel more burdensome?
@@ -45,7 +41,6 @@ Will generate documents that can be incorporated into the patient care record
 
 
 ## Obstacles
--------------
 
 * Perceptional
 	* User familiarity/training
@@ -59,7 +54,6 @@ Will generate documents that can be incorporated into the patient care record
 
 
 ## Operation
---------------
 
 #### Register using NHS email, 2fa/DVH login
 #### The interface:
@@ -75,7 +69,6 @@ The interface is a challenge.
 
 
 ## Dynamic Integrated Adaptive Referral Interface for Expert Systems (DIARIES)
----------------------------------------------------------------------
 
 * Point and click
 	* Options change according to previous selections
