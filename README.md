@@ -1,7 +1,6 @@
 # FLIRT
 ### Nik The Greek's QIP
-A <b>F</b>ast e<b>L</b>ectronic <b>I</b>nternal <b>R</b>eferral <b>T</b>ool
-Electronic Internal Referral Tool
+A <b><u>F</u></b>ast e<b><u>L</u></b>ectronic <b><u>I</u></b>nternal <b><u>R</u></b>eferral <b><u>T</u></b>ool
 
 ## Rationale
 --------------
