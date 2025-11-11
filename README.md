@@ -30,11 +30,11 @@ Will generate documents that can be incorporated into the patient care record
 * Why it works
 * Is there need to change
 * Where are the problems?
-** Time for response
-** Confrontational
-** Appropriateness challenges
-** Learning needs not captured
-** Protocols not defined/accessed/applied
+- Time for response
+- Confrontational
+- Appropriateness challenges
+- Learning needs not captured
+- Protocols not defined/accessed/applied
 
 ## Other such tools
 ---------------------
