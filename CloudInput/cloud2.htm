@@ -1,0 +1,106 @@
+<html>
+<head>
+<script>
+	
+class Cloud{
+	constructor(parentId, cloudSize){
+		this.startId=100;
+		this.phraseList=[];
+		this.cloudId="cloud";
+		this.cloudSize=cloudSize;
+		
+		var cl =document.createElement("div");
+		cl.className="cloud";
+		cl.id=this.cloudId;
+		cl.style.height=cloudSize[0];
+		cl.style.width=cloudSize[1];
+		var parent=document.getElementById(parentId);
+		parent.innerHTML="";
+		parent.appendChild(cl);
+	}
+}
+
+class Phrase{
+	
+	
+}
+
+
+var startId=100;
+var phraseList=[];
+var cloudId="cloud";
+var cloudSize=[400,600];
+
+function cloud(parentId){
+
+}
+
+function cloudPhrase(value,index,array){
+	var phrase=value[0];
+	var size=value[1];
+	var position=value[2];
+    var height=size*1.3;
+    var width=phrase.length*size; 
+    
+	var op=document.createElement("div");
+    op.className="cp";
+    op.id="CP"+startId++;
+    op.innerText=phrase;
+    op.style.height=height;
+    op.style.width=width; 
+     
+	var rectangle=[position[0]-height/2,position[1]-width/2,position[0]+height/2,position[1]+width];
+	
+    op.style.fontSize=size;    
+    op.style.top=rectangle[0]; 
+    op.style.left=rectangle[1]; 
+    op.dataset.rectangle=rectangle;
+    document.getElementById(cloudId).appendChild(op)
+}
+
+function addPhrase(phrase,size){
+	phraseList.push([phrase,size,[cloudSize[0]/2,cloudSize[1]/2]]);
+}
+
+function buildCloud(cloudId){
+   phraseList.forEach(cloudPhrase)
+}
+
+function init(){
+	cloud("container");
+	addPhrase("help",30);
+	addPhrase("clown",30);
+	addPhrase("apple",10);
+	buildCloud(cloudId);
+	
+}
+
+
+</script>
+<style>
+   .cp{
+      position:absolute;
+      background-color:lightgray;
+      text-align:center;
+   
+   }
+   .cp:hover{
+      color:green;
+   
+   }
+   .cloud{
+	     position: relative;
+	     border: 3px solid green;
+   }
+
+
+</style>
+
+</head>
+
+<body onload="init()">
+<div id=container></div>
+
+</body>
+</html>
+
