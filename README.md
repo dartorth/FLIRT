@@ -30,11 +30,11 @@ Will generate documents that can be incorporated into the patient care record
 * Why it works
 * Is there need to change
 * Where are the problems?
-- Time for response
-- Confrontational
-- Appropriateness challenges
-- Learning needs not captured
-- Protocols not defined/accessed/applied
+	- Time for response
+	- Confrontational
+	- Appropriateness challenges
+	- Learning needs not captured
+	- Protocols not defined/accessed/applied
 
 ## Other such tools
 ---------------------
@@ -47,53 +47,46 @@ Will generate documents that can be incorporated into the patient care record
 ## Obstacles
 -------------
 
-Perception
-	User familiarity/training
-	User acceptability
-	Provider obstacles
-Operational
-	Security; data storage
-	Server Needs
-Developmental obstacles
+* Perceptional
+	* User familiarity/training
+	* User acceptability
+	* Provider obstacles
+* Operational
+	* Security; data storage
+	* Server Needs
+* Developmental obstacles
 
 
 
 ## Operation
 --------------
 
-Register using NHS email, 2fa/DVH login
-
-
-The interface:
-
+#### Register using NHS email, 2fa/DVH login
+#### The interface:
 The interface is a challenge.
 
 1) Accessibility: interface
 2) Workflow:
-
-Login: [enter base system]
-[Base system]:[List], [Sort], [Filter], [Search], [View] existing records, [Create] new record, [Archive] records, Open Archive
-
-[View] record:  Option to [Edit] record, [Export] record, Change [Status], Mark for [Review]
-
-[Edit]: [Append] to Record, add [Request] for Action, [Complete]
-
-[Review]: Was this [Effective];  What are the [Positives]/[Failings]; [Learning] Objectives; [Changes] required
+	* Login: [enter base system]
+	* [Base system]:[List], [Sort], [Filter], [Search], [View] existing records, [Create] new record, [Archive] records, Open Archive
+ 	* [View] record:  Option to [Edit] record, [Export] record, Change [Status], Mark for [Review]
+	* [Edit]: [Append] to Record, add [Request] for Action, [Complete]
+	* [Review]: Was this [Effective];  What are the [Positives]/[Failings]; [Learning] Objectives; [Changes] required
 
 
 ## Dynamic Integrated Adaptive Referral Interface for Expert Systems (DIARIES)
 ---------------------------------------------------------------------
 
-Point and click
-   Options change according to previous selections
-   Statistically derived options
-   Synchronous display of requirements and Clinical Decision Support (CDS)
+* Point and click
+	* Options change according to previous selections
+	* Statistically derived options
+	* Synchronous display of requirements and Clinical Decision Support (CDS)
 
-Option to accept Clinical decision support without referral and auto-generate 1) Patient Info 2) GP letter 3) EHR Entry
+* Option to accept Clinical decision support without referral and auto-generate 1) Patient Info 2) GP letter 3) EHR Entry
 
-Automatic rejection of incomplete referrals
+* Automatic rejection of incomplete referrals
 
-Guarantee of response times
+* Guarantee of response times
 
 
 
