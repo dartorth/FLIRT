@@ -1,58 +1,103 @@
 <html>
 <head>
 <script>
-	
+var cloud;
+
 class Cloud{
 	constructor(parentId, cloudSize){
 		this.startId=100;
 		this.phraseList=[];
+		this.activeList=[];
 		this.cloudId="cloud";
-		this.cloudSize=cloudSize;
+		this.cloudSize=cloudSize?cloudSize:[400,600];
 		
 		var cl =document.createElement("div");
 		cl.className="cloud";
 		cl.id=this.cloudId;
-		cl.style.height=cloudSize[0];
-		cl.style.width=cloudSize[1];
+		cl.style.height= this.cloudSize[0];
+		cl.style.width = this.cloudSize[1];
 		var parent=document.getElementById(parentId);
 		parent.innerHTML="";
 		parent.appendChild(cl);
 	}
 	
 	addPhrase(phrase,size){
-	    var height=size*1.3;
-        var width=phrase.length*size;
-		var position=[cloudSize[0]/2,cloudSize[1]/2];
 		var op=document.createElement("div");
 		op.className="cp";
-		op.id="CP"+startId++;
+		op.id="CP"+this.startId++;
 		op.innerText=phrase;
-		op.style.height=height;
-		op.style.width=width; 
-		
-		var rectangle=[position[0]-height/2,position[1]-width/2,position[0]+height/2,position[1]+width];
-		
-		op.style.fontSize=size;
-		op.style.top=rectangle[0];
-		op.style.left=rectangle[1];
-		op.dataset.rectangle=rectangle;
+		this.setSize(op,size);
+		this.setPosition(op);
 		this.phraseList.push(op);
+		return op;
 	}
 	
+	setPosition(el,position){
+		position=position?position:[this.cloudSize[0]/2,this.cloudSize[1]/2];
+	    var height=el.dataset.size*1.3;
+        var width=el.innerText.length*el.dataset.size;
+		var rect       =[position[0]-height/2,position[1]-width/2,position[0]+height/2,position[1]+width/2];
+		el.dataset.rect= rect;
+		el.style.top   = rect[0];
+		el.style.left  = rect[1];
+	}
 	
+	setSize(el,size){
+		el.dataset.size=size;
+	    var height=size*1.3;
+        var width=el.innerText.length*size;
+		el.style.height  = height;
+		el.style.width   = width; 
+		el.style.fontSize= size;
+	}
+	
+	showPhrase(value,index,array){
+		document.getElementById("cloud").appendChild(value)
+	}
+	
+	overlap(el1,el2){
+		var r1=el1.dataset.rect.split(",");
+		var r2=el2.dataset.rect.split(",");
+		comment("Checking overlap between "+ el1.innerText+" and "+el2.innerText);
+		comment(el1.innerText+" rectangle is "+r1);
+		comment(el2.innerText+" rectangle is "+r2);
+		if (parseInt(r1[0])>parseInt(r2[2])){comment("top of "+ el1.innerText+ " "+r1[0]+ " is below " +
+		                         "bottom of " +el2.innerText + " "+r2[2] ); 
+		                         return 0};
+		if (parseInt(r2[0])>parseInt(r1[2])){comment("top of "+ el2.innerText+ " "+r2[0]+ " is below " +
+		                         "bottom of " +el1.innerText + " "+r1[2] ); 
+		                         return 0};
+		if (parseInt(r1[3])<parseInt(r2[1])){comment("right of "+ el1.innerText+ " "+r1[3]+ " is to the left of " +
+		                         "the left of " +el2.innerText + " "+r2[1] ); 
+		                         return 0};
+		if (parseInt(r2[3])<parseInt(r1[1])){comment("right of "+ el2.innerText+ " "+r2[3]+ " is to the left of " +
+		                         "the left of " +el1.innerText + " "+r1[1] ); 
+		                         return 0};
+		comment("overlap exists");
+		                         
+		               
+	}
+	
+	build(){
+		document.getElementById("cloud").innerHTML="";
+		this.phraseList.forEach(this.showPhrase);
+	}
 }
 
-
-function buildCloud(cloudId){
-   phraseList.forEach(cloudPhrase)
+function comment(comment){
+	document.getElementById("commentary").innerHTML+=comment+"<br>";
 }
+
 
 function init(){
-	cloud("container");
-	addPhrase("help",30);
-	addPhrase("clown",30);
-	addPhrase("apple",10);
-	buildCloud(cloudId);
+	cloud=new Cloud("container");
+	var e=cloud.addPhrase("help",30);
+	cloud.setPosition(e,[300,200]);
+	cloud.setPosition(cloud.addPhrase("clown",30),[100,250]);
+	var g=cloud.addPhrase("apple",24);
+	cloud.overlap(g,e);
+	
+	cloud.build();
 	
 }
 
@@ -81,7 +126,6 @@ function init(){
 
 <body onload="init()">
 <div id=container></div>
-
+<div id=commentary></div>
 </body>
 </html>
-
